@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="renderer" content="webkit"/>
+    <title>WebDAV+keePass实现云同步密码管理</title>
+    <link rel="stylesheet" href="data:text/css;base64,CiAgICBoMSwgaDIsIGgzLCBoNSwgaDYsICBpbWcsIHN2ZywgcHJlLCB0YWJsZSwgdHIsIC5tZF9saW5le3BhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZH0KCgogICAgYm9keSB7CiAgICAgICAgYmFja2dyb3VuZDogIzE3MUQyMTsKICAgICAgICBmb250LXNpemU6IDE0cHg7CiAgICAgICAgbGluZS1oZWlnaHQ6Mi4zOwogICAgICAgIGZvbnQtZmFtaWx5OiAiQXBwbGUgU0QgR290aGljIE5lbyI7CiAgICAgICAgZm9udC13ZWlnaHQ6IG5vcm1hbDsKICAgICAgICBjb2xvcjogI0E1QjBDMDsKICAgICAgICBwYWRkaW5nOiAwIDM4cHg7CiAgICAgICAgbWF4LXdpZHRoOiA4MjBweDsKICAgICAgICBtYXJnaW46IDAgYXV0bzsKCiAgICAgICAgd29yZC13cmFwOmJyZWFrLXdvcmQ7CiAgICAgICAgd29yZC1icmVhazogbm9ybWFsOwogICAgICAgIG92ZXJmbG93LXdyYXA6YnJlYWstd29yZDsKCgogICAgICAgIG92ZXJmbG93LXg6IGhpZGRlbjsKICAgICAgICB0ZXh0LXJlbmRlcmluZzogb3B0aW1pemVMZWdpYmlsaXR5OwogICAgICAgIC13ZWJraXQtdGV4dC1zaXplLWFkanVzdDogbm9uZTsKICAgIH0KCiAgICBicnsKICAgICAgICBsaW5lLWhlaWdodDogMi4zOwogICAgfQoKCgogICAgQG1lZGlhIChtYXgtd2lkdGg6IDYwMHB4KSB7CiAgICAgICAgYm9keXsKICAgICAgICAgICAgcGFkZGluZzogMCAzMHB4OwogICAgICAgIH0KICAgIH0KCiAgICBAbWVkaWEgKG1heC13aWR0aDogNDgwcHgpIHsKICAgICAgICBib2R5ewogICAgICAgICAgICBwYWRkaW5nOiAwIDIwcHg7CiAgICAgICAgfQogICAgfQoKICAgIC5naXN0ewogICAgICAgIHdvcmQtYnJlYWs6IG5vcm1hbDsKICAgIH0KCiAgICAucG9zdHsKICAgICAgICBtYXJnaW4tdG9wOiAxMHB4OwogICAgICAgIG1hcmdpbi1ib3R0b206IDUwcHg7CiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlOwogICAgfQoKCgogICAgaW1newogICAgICAgIG1heC13aWR0aDogOTglOwogICAgICAgIG1hcmdpbjogMC44ZW0gYXV0byAwLjhlbSBhdXRvOwogICAgfQoKICAgIGgxIGltZywgaDIgaW1nLCBoMyBpbWcsIGg0IGltZywgaDUgaW1nLCBoNiBpbWd7CiAgICAgICAgbWFyZ2luOiBhdXRvOwogICAgfQoKICAgIC54Ml9pbWFnZXsKICAgICAgICB6b29tOiA1MCU7CiAgICB9CgogICAgLngzX2ltYWdlewogICAgICAgIHpvb206IDMzLjMzJTsKICAgIH0KCiAgICAueDRfaW1hZ2V7CiAgICAgICAgem9vbTogMjUlOwogICAgfQoKCiAgICBwIGltZ3sKICAgICAgICBtYXJnaW46IDAgYXV0bzsKICAgIH0KCiAgICBwewogICAgICAgIC8qb3ZlcmZsb3c6aGlkZGVuOyovCiAgICAgICAgbWFyZ2luOiAxLjBlbSAwIDEuOGVtIDA7CiAgICB9CgogICAgcC5tZF9ibG9ja19hc19vcGVuaW5newogICAgICAgIG1hcmdpbi1ib3R0b206IC0wLjVlbSAhaW1wb3J0YW50OwogICAgfQoKICAgIGxpIHB7CiAgICAgICAgbGluZS1oZWlnaHQ6IDIuMDc7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQoKICAgIC5wX3BhcnQgewogICAgICAgIG1hcmdpbjogMTBweCAwOwogICAgfQoKICAgIC5wX3BhcnQgcHsKICAgICAgICBtYXJnaW46IDAgMCAwLjZlbSAwOwogICAgfQoKICAgIC8qIHRleHQgaW5kZW50IGZvciBjaGluZXNlIHN0YXJ0cyovCiAgICAvKmgyLCBoMywgaDQsIGg1LCBoNiwgLnBfcGFydCBwLCAudG9kb19pdGVtLCBwewogICAgICAgIHRleHQtaW5kZW50OiAwcHg7CiAgICB9Ki8KICAgIHRhYmxlLCBwcmUsIHN2ZywgLmNvZGVoaWxpdGV0YWJsZXsKICAgICAgICBtYXJnaW4tbGVmdDogMHB4OwogICAgICAgIG1hcmdpbi1yaWdodDogMHB4OwogICAgfQoKICAgIC5jb2RlaGlsaXRldGFibGUgcHJlewogICAgICAgIG1hcmdpbi1sZWZ0OiAwOwogICAgICAgIG1hcmdpbi1yaWdodDogMDsKCiAgICB9CgogICAgLmNvZGVoaWxpdGV0YWJsZSAuY29kZWhpbGl0ZSBwcmV7CiAgICAgICAgYm9yZGVyLWxlZnQ6IG5vbmU7CiAgICB9CgogICAgLyogdGV4dCBpbmRlbnQgZm9yIGNoaW5lc2UgZW5kcyovCgoKICAgIGJsb2NrcXVvdGUgLnBfcGFydCBwLCBsaSAucF9wYXJ0IHB7CiAgICAgICAgdGV4dC1pbmRlbnQ6IDAgIWltcG9ydGFudDsKICAgIH0KCgogICAgaHJ7CiAgICAgICAgbWFyZ2luOiAzOHB4IDA7CiAgICAgICAgYm9yZGVyOiBub25lOwogICAgICAgIGJvcmRlci1ib3R0b206IDFweCBkYXNoZWQgcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICBjb2xvcjogcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICBoZWlnaHQ6IDFweDsKICAgICAgICBsaW5lLWhlaWdodDoxcHg7CiAgICAgICAgZm9udC1zaXplOjFweDsKICAgICAgICBvdmVyZmxvdy15OiBoaWRkZW47CiAgICB9CgoKICAgIGgxewogICAgICAgIGNvbG9yOiAjRDVGMEY4OwogICAgICAgIGZvbnQtc2l6ZTogMS42ZW07CiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDsKICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBsaW5lLWhlaWdodDogMS42ZW07CiAgICAgICAgbWFyZ2luLXRvcDogMC44ZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC42ZW07CiAgICB9CgogICAgaDEsIGgyLCBoMywgaDR7CiAgICAgICAgY29sb3I6ICNENUYwRjg7CiAgICB9CgoKICAgIGgyLCBoM3sKICAgICAgICBsaW5lLWhlaWdodDogMS41ZW07CiAgICAgICAgbWFyZ2luLXRvcDogMS44ZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC41ZW07CiAgICB9CgogICAgLmgxNi5tZF9maXJzdF9oLm1kX2ZpcnN0X3BhcnQgewogICAgICAgIG1hcmdpbi10b3A6IDVweDsKICAgIH0KCiAgICBoMiB7CiAgICAgICAgZm9udC1zaXplOiAxLjM1ZW07CiAgICB9CgogICAgaDMgewogICAgICAgIGZvbnQtc2l6ZTogMS4yZW0KICAgIH0KCiAgICBoNCB7CiAgICAgICAgZm9udC1zaXplOiAxLjFlbTsKICAgIH0KCiAgICBoNSB7CiAgICAgICAgZm9udC1zaXplOiAxLjE1ZW07CiAgICB9CgogICAgaDYge2ZvbnQtc2l6ZTogMWVtfQoKCiAgICBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2ewogICAgICAgIGZvbnQtZmFtaWx5OiAiSGVpdGkgU0MiOwogICAgfQoKCiAgICBvbCB7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQoKICAgIHVsewogICAgICAgIHBhZGRpbmc6IDVweCAzOHB4OwogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICB1bCBsaSwgbGl7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CgogICAgdWwgcCwgb2wgcHsKICAgICAgICBvdmVyZmxvdzogdmlzaWJsZTsKICAgIH0KCgogICAgYmxvY2txdW90ZSB7CiAgICAgICAgLW1vei1ib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgbWFyZ2luOiAxLjZlbSAwOwogICAgICAgIHBhZGRpbmc6IDAgMCAwIDEuMmVtOwogICAgICAgIGJvcmRlci1sZWZ0OiAwLjRlbSBzb2xpZCAjNEY1NTVFOwogICAgICAgIGNvbG9yOiAjOUE5QTlBOwogICAgICAgIG1pbi1oZWlnaHQ6MjBweDsKICAgIH0KCgogICAgYmxvY2txdW90ZSBwIHsKICAgICAgICBtYXJnaW46IDAuOGVtIDA7CiAgICB9CgogICAgYmxvY2txdW90ZSBzcGFuLm1kX2xpbmUgewogICAgICAgIG1hcmdpbi1ib3R0b206IDAuMjVlbTsKICAgICAgICBtYXJnaW4tdG9wOiAwLjI1ZW07CiAgICB9CgogICAgYmxvY2txdW90ZSB1bHsKICAgICAgICBwYWRkaW5nOiAwIDE1cHg7CiAgICB9CgogICAgYmxvY2txdW90ZSBzbWFsbCB7CiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrOwogICAgICAgIG1hcmdpbjogMC44ZW0gMCAwLjhlbSAxLjVlbTsKICAgICAgICBmb250LXNpemU6IDAuOWVtOwogICAgICAgIGNvbG9yOiAjY2NjOwogICAgfQoKCgoKCgogICAgdGFibGUgewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjc7CiAgICAgICAgLW1vei1ib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgbWFyZ2luOiAxZW0gMDsKICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICBtYXgtd2lkdGg6IDEwMCU7CiAgICAgICAgYm9yZGVyLXdpZHRoOiAxcHg7CiAgICAgICAgYm9yZGVyLXN0eWxlOiBzb2xpZDsKICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICAgICAgICBib3JkZXItc3BhY2luZzogMDsKICAgICAgICB3b3JkLWJyZWFrOiBub3JtYWw7CiAgICB9CiAgICAKICAgIC8qIGZvciB3ZWNoYXQgb25seSBzdGFydHMgKi8KICAgIHRhYmxlIHRyewogICAgICAgIGJvcmRlci1yaWdodC1zdHlsZTogc29saWQ7CiAgICAgICAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxcHg7CiAgICB9CiAgICAKICAgIHRhYmxlIHRib2R5ewogICAgICAgIGJvcmRlci1ib3R0b20td2lkdGg6IDFweDsKICAgICAgICBib3JkZXItYm90dG9tLXN0eWxlOiBzb2xpZDsKICAgIH0KICAgIC8qIGZvciB3ZWNoYXQgb25seSBlbmRzICovCgoKICAgIHRhYmxlLCB0YWJsZSB0ciwgdGFibGUgdHIgdGQsIHRhYmxlIHRyIHRoLCB0YWJsZSB0Ym9keSB7CiAgICAgICAgYm9yZGVyLWNvbG9yOiByZ2JhKDIwNSwgMjA1LCAyMDUsIDAuMzUpOwogICAgfQoKICAgIHRhYmxlIHRoIHsKICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgIH0KCiAgICB0ciB0aCB7CiAgICAgICAgYm9yZGVyLWJvdHRvbS13aWR0aDogMXB4OwogICAgICAgIGJvcmRlci1ib3R0b20tc3R5bGU6IHNvbGlkOwogICAgICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICB9CgogICAgdHIgdGgsIHRyIHRkIHsKICAgICAgICBwYWRkaW5nOiAxMHB4IDIwcHg7CiAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQ7CiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoMjA1LCAyMDUsIDIwNSwgMC4zNSk7CiAgICB9CgogICAgdGJvZHkgdHI6bGFzdC1jaGlsZCB0ZHsKICAgICAgICBib3JkZXItYm90dG9tOiAwOwogICAgfQoKICAgIHRyIHRoOmxhc3QtY2hpbGQsIHRyIHRkOmxhc3QtY2hpbGQgewogICAgICAgIGJvcmRlci1yaWdodDogMDsKICAgIH0KCiAgICB0YWJsZSB0Ym9keSA+IHRyOm50aC1jaGlsZChvZGQpID4gdGQsIHRhYmxlIHRib2R5ID4gdHI6bnRoLWNoaWxkKG9kZCkgPiB0aCB7CiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyMzUsIDIzNSwgMjM1LCAwLjIpOwogICAgfQoKCgoKICAgIGNvZGV7CiAgICAgICAgYmFja2dyb3VuZDogcmdiYSgyMzUsIDIzNSwgMjM1LCAwLjM1KTsKICAgICAgICBjb2xvcjogIzc4RTI5MTsKICAgICAgICBwYWRkaW5nOiAwIDVweDsKICAgICAgICBtYXJnaW46IDAgMnB4OwogICAgfQoKICAgIHByZXsKICAgICAgICBtYXJnaW4tdG9wOiAxLjJlbTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAxLjJlbTsKICAgICAgICBwYWRkaW5nOiAxNXB4IDEwcHg7CiAgICAgICAgZGlzcGxheTogYmxvY2s7CiAgICAgICAgLyogb3ZlcmZsb3c6IGF1dG87ICovCiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICAvKmJhY2tncm91bmQ6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4zNSk7Ki8KICAgICAgICBmb250LXNpemU6IDkwJTsKICAgICAgICBsaW5lLWhlaWdodDoyLjM7CiAgICAgICAgd2hpdGUtc3BhY2U6IHByZS13cmFwOwogICAgfQoKICAgIC5oaWdobGlnaHR0YWJsZSB0ZHsKICAgICAgICAvKmJhY2tncm91bmQtY29sb3I6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4zNSkgIWltcG9ydGFudDsqLwogICAgfQoKICAgIC53aXRoX2xpbmVzIHByZXsKICAgICAgICBib3JkZXI6bm9uZTsKICAgICAgICBtYXJnaW4tdG9wOiAwLjJlbTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjJlbTsKICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsKICAgIH0KCiAgICAuaXNfY29kZV9maWxlIHByZXsKICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7CiAgICB9CgogICAgLmNvZGVoaWxpdGUgcHJlewogICAgICAgIC8qd29yZC13cmFwOiBub3JtYWw7Ki8KICAgICAgICBmb250LXNpemU6IDEzcHg7CiAgICB9CgogICAgcHJlIGNvZGV7CiAgICAgICAgYm9yZGVyOm5vbmU7CiAgICAgICAgYmFja2dyb3VuZDogbm9uZTsKICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICBwcmUgcHsKICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgcGFkZGluZzogMDsKICAgIH0KCiAgICAuY29kZWhpbGl0ZSB0aCwgLmNvZGVoaWxpdGUgdGR7CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuOGVtOwogICAgfQoKCiAgICBhewogICAgICAgIGNvbG9yOiAjNzdCODdGOwogICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKICAgICAgICAvL2JvcmRlci1ib3R0b206IDFweCBzb2xpZCB0cmFuc3BhcmVudDsKICAgIH0KCiAgICBhOmhvdmVyewogICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOwogICAgICAgIC8vYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICM3N0I4N0Y7CiAgICB9CgogICAgc3Ryb25nIHsKICAgICAgICBjb2xvcjogI0ZGRkZGRjsKICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgIH0KCgogICAgLyogZm9yIG1hcmtkb3duICovCgogICAgLmxpbmVub3MgcHJlewoJCWJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwoJCWJvcmRlcjogbm9uZTsKCX0KCgkubGluZW5vc3sKCSAgICBwYWRkaW5nOiAwIDVweCAwIDVweDsKCSAgICB3aWR0aDogMC4wMDElOwoJfQoKCS5oaWdobGlnaHR0YWJsZSBwcmV7CgkgICAgcGFkZGluZzogNXB4IDEwcHg7Cgl9CgogICAgLnRvY3sKICAgICAgICBiYWNrZ3JvdW5kOiBOb25lOwogICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDsKICAgICAgICBib3JkZXI6IDFweCBzb2xpZCBOb25lOwogICAgICAgIG1hcmdpbjogMjdweCAwIDQ3cHggMDsKICAgICAgICBwYWRkaW5nOiAxMHB4IDA7CiAgICB9CgogICAgLnRvYyB1bHsKICAgICAgICAvL3BhZGRpbmc6IDVweCA0MnB4OwogICAgfQoKICAgIC50b2MgdWwgbGl7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CiAgICAudG9jIGF7CiAgICAgICAgY29sb3I6ICNBNUIwQzA7CiAgICB9CgoKCiAgICAudG9kb19pdGVtewogICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7CiAgICAgICAgbWFyZ2luLWxlZnQ6IC0xLjVlbQogICAgfQogICAgLnRvZG9faXRlbSAudG9kb19pdGVtIHsKICAgICAgICBtYXJnaW4tbGVmdDogYXV0bzsKICAgIH0KCiAgICAudG9kb19kb25lX2l0ZW17CiAgICAgICAgY29sb3I6ICM1NTU1NTU7CiAgICB9CgogICAgLnRvZG9fdW5kb25lX2l0ZW17CiAgICAgICAgY29sb3I6ICNEREREREQ7CiAgICB9CgoKICAgIHVsIGxpLnRvZG9faXRlbXsKCWxpc3Qtc3R5bGUtdHlwZTogbm9uZTsKICAgIH0KCiAgICB1bCBsaS50b2RvX2l0ZW06YmVmb3JlewogICAgICAgIGNvbnRlbnQ6ICfimJAnOwogICAgICAgIC8qcGFkZGluZy1yaWdodDogMC4yZW07Ki8KICAgICAgICBmb250LWZhbWlseTogYXJpYWw7CiAgICB9CgogICAgdWwgbGkudG9kb19kb25lX2l0ZW06YmVmb3JlewogICAgICAgIGNvbnRlbnQ6ICfimJEnOwogICAgICAgIC8qcGFkZGluZy1yaWdodDogMC4yZW07Ki8KICAgICAgICBmb250LWZhbWlseTogYXJpYWw7CiAgICB9CgogICAgdWwgbGkudG9kb19pdGVtIGlucHV0ewogICAgICAgIGRpc3BsYXk6bm9uZQogICAgfQoKCiAgICAvKnB5Z21lbnRzKi8KCiAgICAuY29kZWhpbGl0ZXsKICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50OwogICAgfQoKICAgIHRhYmxlLmNvZGVoaWxpdGV0YWJsZXsgYm9yZGVyOm5vbmU7IH0KCgogICAgLmNvZGVoaWxpdGV0YWJsZSB0ZHsgYm9yZGVyOiBub25lOyBwYWRkaW5nOiAwO30KCiAgICAuZmxvdy1ncmFwaGljLCAubWRfYmxvY2tfc2VjdGlvbl9mb3JfZmxvd19ncmFwaGlje3RleHQtYWxpZ246IGNlbnRlcn0KICAgIC5mbG93LWdyYXBoaWMgeyBvdmVyZmxvdy14OiBhdXRvO30KICAgIC5tZXJtYWlkLCAubWRfYmxvY2tfc2VjdGlvbl9mb3JfbWVybWFpZHt0ZXh0LWFsaWduOiBjZW50ZXJ9CgoKICAgIHRhYmxlLCB0ciwgdGQsIHRoLCB0Ym9keSwgdGhlYWQsIHRmb290LCAubWRfZWNoYXJ0cywgYmxvY2txdW90ZSAubWRfbGluZXsKICAgICAgICBwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQgIWltcG9ydGFudDsKICAgIH0KCiAgICAuZm9vdG5vdGVzIC5tZF9saW5lewogICAgICAgIGRpc3BsYXk6IGlubGluZSAhaW1wb3J0YW50OwogICAgfQoKCiAgICAuaW1nX3J0XzkwewogICAgICAgIHRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgICAgIC1tcy10cmFuc2Zvcm06cm90YXRlKDkwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOnJvdGF0ZSg5MGRlZyk7CiAgICAgICAgLW8tdHJhbnNmb3JtOnJvdGF0ZSg5MGRlZyk7CiAgICB9CiAgICAuaW1nX3J0XzE4MHsKICAgICAgICB0cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICAgICAgLW1zLXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtby10cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICB9CiAgICAuaW1nX3J0XzI3MHsKICAgICAgICB0cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICAgICAgLW1zLXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtby10cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICB9CgogICAgLm1kX2hhc19ibG9ja19iZWxvd3sKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjFlbSAhaW1wb3J0YW50OwogICAgfQogICAgLm1kX2hhc19ibG9ja19iZWxvd19pbWd7CiAgICAgICAgbWFyZ2luLWJvdHRvbTogLTAuNmVtICFpbXBvcnRhbnQ7CiAgICB9CgoKICAgIC5jb2RlaGlsaXRlIC5lcnJ7CiAgICAgICAgYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7CiAgICB9CgoKCiAgICAgICAgc3Bhbi5tZF9saW5le21hcmdpbi1ib3R0b206MC41ZW07IGRpc3BsYXk6YmxvY2s7IGxpbmUtaGVpZ2h0OjEuOTg5NX0KICAgICAgICAubWRfbGluZSBicnsgZGlzcGxheTogbm9uZTt9CiAgICAgICAgLmNvZGVoaWxpdGUgLmhsbCB7IGJhY2tncm91bmQtY29sb3I6ICB9Ci5jb2RlaGlsaXRlICB7IGJhY2tncm91bmQ6ICMyNzI4MjI7IGNvbG9yOiAjZjhmOGYyIH0KLmNvZGVoaWxpdGUgLmMgeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQgKi8KLmNvZGVoaWxpdGUgLmVyciB7IGNvbG9yOiAjOTYwMDUwOyBiYWNrZ3JvdW5kLWNvbG9yOiAjMWUwMDEwIH0gLyogRXJyb3IgKi8KLmNvZGVoaWxpdGUgLmsgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQgKi8KLmNvZGVoaWxpdGUgLmwgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwgKi8KLmNvZGVoaWxpdGUgLm4geyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUgKi8KLmNvZGVoaWxpdGUgLm8geyBjb2xvcjogI2Y5MjY3MiB9IC8qIE9wZXJhdG9yICovCi5jb2RlaGlsaXRlIC5wIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBQdW5jdHVhdGlvbiAqLwouY29kZWhpbGl0ZSAuY2ggeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQuSGFzaGJhbmcgKi8KLmNvZGVoaWxpdGUgLmNtIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50Lk11bHRpbGluZSAqLwouY29kZWhpbGl0ZSAuY3AgeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQuUHJlcHJvYyAqLwouY29kZWhpbGl0ZSAuY3BmIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50LlByZXByb2NGaWxlICovCi5jb2RlaGlsaXRlIC5jMSB7IGNvbG9yOiAjNzU3MTVlIH0gLyogQ29tbWVudC5TaW5nbGUgKi8KLmNvZGVoaWxpdGUgLmNzIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50LlNwZWNpYWwgKi8KLmNvZGVoaWxpdGUgLmdkIHsgY29sb3I6ICNmOTI2NzIgfSAvKiBHZW5lcmljLkRlbGV0ZWQgKi8KLmNvZGVoaWxpdGUgLmdpIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBHZW5lcmljLkluc2VydGVkICovCi5jb2RlaGlsaXRlIC5ndSB7IGNvbG9yOiAjNzU3MTVlIH0gLyogR2VuZXJpYy5TdWJoZWFkaW5nICovCi5jb2RlaGlsaXRlIC5rYyB7IGNvbG9yOiAjNjZkOWVmIH0gLyogS2V5d29yZC5Db25zdGFudCAqLwouY29kZWhpbGl0ZSAua2QgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuRGVjbGFyYXRpb24gKi8KLmNvZGVoaWxpdGUgLmtuIHsgY29sb3I6ICNmOTI2NzIgfSAvKiBLZXl3b3JkLk5hbWVzcGFjZSAqLwouY29kZWhpbGl0ZSAua3AgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuUHNldWRvICovCi5jb2RlaGlsaXRlIC5rciB7IGNvbG9yOiAjNjZkOWVmIH0gLyogS2V5d29yZC5SZXNlcnZlZCAqLwouY29kZWhpbGl0ZSAua3QgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuVHlwZSAqLwouY29kZWhpbGl0ZSAubGQgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuRGF0ZSAqLwouY29kZWhpbGl0ZSAubSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIgKi8KLmNvZGVoaWxpdGUgLnMgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nICovCi5jb2RlaGlsaXRlIC5uYSB7IGNvbG9yOiAjYTZlMjJlIH0gLyogTmFtZS5BdHRyaWJ1dGUgKi8KLmNvZGVoaWxpdGUgLm5iIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBOYW1lLkJ1aWx0aW4gKi8KLmNvZGVoaWxpdGUgLm5jIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkNsYXNzICovCi5jb2RlaGlsaXRlIC5ubyB7IGNvbG9yOiAjNjZkOWVmIH0gLyogTmFtZS5Db25zdGFudCAqLwouY29kZWhpbGl0ZSAubmQgeyBjb2xvcjogI2E2ZTIyZSB9IC8qIE5hbWUuRGVjb3JhdG9yICovCi5jb2RlaGlsaXRlIC5uaSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5FbnRpdHkgKi8KLmNvZGVoaWxpdGUgLm5lIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkV4Y2VwdGlvbiAqLwouY29kZWhpbGl0ZSAubmYgeyBjb2xvcjogI2E2ZTIyZSB9IC8qIE5hbWUuRnVuY3Rpb24gKi8KLmNvZGVoaWxpdGUgLm5sIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBOYW1lLkxhYmVsICovCi5jb2RlaGlsaXRlIC5ubiB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5OYW1lc3BhY2UgKi8KLmNvZGVoaWxpdGUgLm54IHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLk90aGVyICovCi5jb2RlaGlsaXRlIC5weSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5Qcm9wZXJ0eSAqLwouY29kZWhpbGl0ZSAubnQgeyBjb2xvcjogI2Y5MjY3MiB9IC8qIE5hbWUuVGFnICovCi5jb2RlaGlsaXRlIC5udiB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZSAqLwouY29kZWhpbGl0ZSAub3cgeyBjb2xvcjogI2Y5MjY3MiB9IC8qIE9wZXJhdG9yLldvcmQgKi8KLmNvZGVoaWxpdGUgLncgeyBjb2xvcjogI2JiYmJiYiB9IC8qIFRleHQuV2hpdGVzcGFjZSAqLwouY29kZWhpbGl0ZSAubWIgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLkJpbiAqLwouY29kZWhpbGl0ZSAubWYgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLkZsb2F0ICovCi5jb2RlaGlsaXRlIC5taCB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIuSGV4ICovCi5jb2RlaGlsaXRlIC5taSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIuSW50ZWdlciAqLwouY29kZWhpbGl0ZSAubW8geyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLk9jdCAqLwouY29kZWhpbGl0ZSAuc2EgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLkFmZml4ICovCi5jb2RlaGlsaXRlIC5zYiB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuQmFja3RpY2sgKi8KLmNvZGVoaWxpdGUgLnNjIHsgY29sb3I6ICNlNmRiNzQgfSAvKiBMaXRlcmFsLlN0cmluZy5DaGFyICovCi5jb2RlaGlsaXRlIC5kbCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRGVsaW1pdGVyICovCi5jb2RlaGlsaXRlIC5zZCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRG9jICovCi5jb2RlaGlsaXRlIC5zMiB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRG91YmxlICovCi5jb2RlaGlsaXRlIC5zZSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5TdHJpbmcuRXNjYXBlICovCi5jb2RlaGlsaXRlIC5zaCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuSGVyZWRvYyAqLwouY29kZWhpbGl0ZSAuc2kgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLkludGVycG9sICovCi5jb2RlaGlsaXRlIC5zeCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuT3RoZXIgKi8KLmNvZGVoaWxpdGUgLnNyIHsgY29sb3I6ICNlNmRiNzQgfSAvKiBMaXRlcmFsLlN0cmluZy5SZWdleCAqLwouY29kZWhpbGl0ZSAuczEgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLlNpbmdsZSAqLwouY29kZWhpbGl0ZSAuc3MgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLlN5bWJvbCAqLwouY29kZWhpbGl0ZSAuYnAgeyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuQnVpbHRpbi5Qc2V1ZG8gKi8KLmNvZGVoaWxpdGUgLmZtIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkZ1bmN0aW9uLk1hZ2ljICovCi5jb2RlaGlsaXRlIC52YyB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZS5DbGFzcyAqLwouY29kZWhpbGl0ZSAudmcgeyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuVmFyaWFibGUuR2xvYmFsICovCi5jb2RlaGlsaXRlIC52aSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZS5JbnN0YW5jZSAqLwouY29kZWhpbGl0ZSAudm0geyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuVmFyaWFibGUuTWFnaWMgKi8KLmNvZGVoaWxpdGUgLmlsIHsgY29sb3I6ICNhZTgxZmYgfSAvKiBMaXRlcmFsLk51bWJlci5JbnRlZ2VyLkxvbmcgKi8KICAgIC8qIHBhZ2VfY3NzICovCgogICAgCiAgICBodG1sewogICAgICAgIGJhY2tncm91bmQ6ICMxMDE2MUE7CiAgICB9CiAgICBib2R5ewogICAgICAgIHdpZHRoOiA5MCU7CiAgICAgICAgbWF4LXdpZHRoOiA5NjBweDsKICAgICAgICBiYWNrZ3JvdW5kOiAjMTcxRDIxOwogICAgICAgIG1hcmdpbjogM2VtIGF1dG8gMDsKICAgICAgICBwYWRkaW5nLXRvcDogMmVtOwogICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICMxMDE2MUE7CiAgICAgICAgYm9yZGVyLXdpZHRoOiAwIDFweDsKICAgIH0KCiAgICAucG9zdHsKICAgICAgICBwYWRkaW5nOiA1JSAxMCU7CiAgICAgICAgbWFyZ2luLXRvcDogMDsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwOwogICAgfQogICAgCgogICAgLnRpdGxlX2NvbnRhaW5lcnsKICAgICAgICBtYXJnaW46IC0yZW0gMCAzLjVlbTsKICAgICAgICBwYWRkaW5nLWJvdHRvbTogMmVtOwogICAgICAgIGJvcmRlci1ib3R0b206IDNweCBkb3VibGUgIzEwMTYxQTsKICAgIH0KICAgIC50aXRsZV9jb250YWluZXIgaDF7CiAgICAgICAgbWFyZ2luLXRvcDogMS4yZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC42ZW07CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuMzU7CiAgICAgICAgZm9udC1zaXplOiAyLjI1ZW07CiAgICB9CiAgICAudGl0bGVfY29udGFpbmVyIGgyewogICAgICAgIGNvbG9yOiAjOUE5QTlBOwogICAgICAgIGZvbnQtc2l6ZTogMWVtOwogICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgICAgICAgcGFkZGluZy1ib3R0b206IDJlbTsKICAgICAgICBsaW5lLWhlaWdodDogMS4zNTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAtMmVtOwogICAgfQoKICAgIEBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzYwcHgpewogICAgICAgIGh0bWx7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwogICAgICAgIH0KICAgICAgICBib2R5ewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgfQogICAgICAgIC5wb3N0ewogICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgIH0KICAgIH0KICAgIC8qIHBhZ2VfY3NzICovCgogICAg">
+    <!--header_scripts-->
+</head>
+<body>
+    <div class="post">
+        <div class="post_body">
+            
+                <div class=title_container>
+                    <h1> WebDAV+keePass实现云同步密码管理 </h1>
+                    
+                </div>
+            
+            <blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><a class="md_compiled" href="https://baike.baidu.com/item/keepass/3666012?fr=aladdin">keePass介绍</a> ：KeePass 是一款管理密码的开源的免费软件，KeePass 将密码存储为一个数据库，而这个数据库由一个主密码或密码文件锁住，也就是说我们只需要记住一个主密码，或使用一个密码文件，就可以解开这个数据库，就可以获得其他的密码内容。不用担心安全，这个数据库采用当今非常安全的密码算法AES 和 Twofish。</span>
+</p>
+
+</blockquote>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"><a class="md_compiled" href="https://baike.baidu.com/item/WebDAV/4610909">WebDAV介绍</a>:WebDAV （Web-based Distributed Authoring and Versioning） 一种基于 HTTP 1.1协议的通信协议。它扩展了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对Web Server直接读写，并支持写文件锁定(Locking)及解锁(Unlock)，还可以支持文件的版本控制。</span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">由于keePass不支持云同步，不方便将各个设备的密码文件整合，因此可以搭建一个WebDAV服务器，将秘钥文件放在其中，在各个终端都访问同一个文件，来达到同步的目的。</span>
+</p>
+
+<h2 id="toc_0" class="h16 md_first_h">环境：CentOS7 + Apache2.4</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">如果服务器没有则先安装apache ，<code>yum install httpd</code> ，Apache2.4是默认开启WebDAV的, 可以查看 <code>/etc/httpd/conf.modules.d</code>目录下的<code>dav.conf</code>配置文件如果没有此文件，可以把以下代码加到自定义的配置文件中以保证开启WebDAV服务</span>
+</p>
+
+
+<pre><code>    LoadModule dav_module modules/mod_dav.so
+    LoadModule dav_fs_module modules/mod_dav_fs.so
+    LoadModule dav_lock_module modules/mod_dav_lock.so</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">    在默认配置文件为WebDAV服务打开一个监听端口，以6666为例，并在conf.d文件夹中为WebDAV服务单独创建一个配置文件。</span>
+</p>
+
+<div class="codehilite code_lang_xml  highlight"><pre><span></span>    <span class="nt">&lt;VirtualHost</span> <span class="err">*:6666</span><span class="nt">&gt;</span>
+       ServerAdmin name
+        ServerName name.cn
+        # 存放文件的位置
+        DocumentRoot /data/webdav
+        # 日志文件的位置
+        ErrorLog /var/log/httpd/error.log
+        CustomLog /var/log/httpd/access.log combined
+        # 访问路径
+        Alias /dav /data/webdav
+    <span class="nt">&lt;Directory</span> <span class="err">&quot;/data/webdav&quot;</span><span class="nt">&gt;</span>
+        # 访问权限
+        Options Indexes MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    <span class="nt">&lt;/Directory&gt;</span>
+    <span class="nt">&lt;Location</span> <span class="nt">/&gt;</span>
+        # 验证密码
+        DAV On
+        AuthType Basic
+        AuthName &quot;WebDAV-Server&quot;
+        
+        # 这是登录验证的密码文件  
+        AuthUserFile &quot;/etc/httpd/users.pwd&quot;
+        
+        Require valid-user
+    <span class="nt">&lt;/Location&gt;</span>
+    <span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+
+<!--block_code_end-->
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start">我们需要创建一个用来验证登录的密码文件，存放在配置文件所规定的目录中 <code>/etc/httpd/users.pwd</code>。 创建密码需要用到一个<code>htpasswd</code>工具，这个工具是Apache内置的，不需要单独安装。<br /></span>
+    <span class="md_line md_line_end"><code>htpasswd -c /etc/httpd/users.pwd username</code> 之后需要自己设定一个密码输入两次，便会在该位置创建WebDAV密码文件。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>在浏览器中测试，如果出现下图情况说明开启成功。
+<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-9f41a070e5922396.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-c9fb2c9489340c05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+</ul>
+<h2 id="toc_1" class="h16">keePass使用</h2>
+
+<ul>
+<li class="md_li"><span>Windows: keePassXC客户端
+</span></li>
+<li class="md_li"><span>OS X: keePassXC For Mac客户端
+</span></li>
+<li class="md_li"><span>Android：keepass2Android
+</span></li>
+<li class="md_li"><span>IOS: MinikeePass
+</span></li>
+</ul>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">另外还有很多开源软件都可以使用: <a class="md_compiled" href="http://www.github.com">GitHub</a></span>
+</p>
+
+</blockquote>
+<h3 id="toc_2" class="h16">在Windows设备上访问WebDAV服务器</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end">这是Windows下客户端的主界面，我们可以新创建一个密码库或者打开一个备份的密码库，这里我们打开已有密码文件。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-1ce9d17b80ba8854.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ></span>
+</p>
+
+
+<ol>
+<li class="md_li"><span>在资源管理器中，右击此电脑，选择映射网络驱动器。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-0abc6147c5a3521b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+<li class="md_li"><span>填写服务器地址，端口号和密码。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-3630eded582b8715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+<li class="md_li"><span>把映射驱动器磁盘里的密码文件拖到软件里。输入创建密码库时的主密码就可以打开。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-79cd1c6c58bfe78c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+</ol>
+<h3 id="toc_3" class="h16">在OSX设备上访问</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end">keePassXC For Mac<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-d11a90b95f6a5e7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ></span>
+</p>
+
+
+<ol>
+<li class="md_li"><span>打开Finder文件管理器，按<code>command + k</code>键，连接服务器。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-a25db93813ff5a21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+<li class="md_li"><span>同样将密码文件拖到APP中。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-d5d27928a0cc071d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+</ol>
+<h3 id="toc_4" class="h16">在Android设备上访问</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end">keepass2android<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-8e248da3e7bf6ada.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ></span>
+</p>
+
+
+<ol>
+<li class="md_li"><span>选择打开文件，找到HTTP(WebDav)选项（我的服务器没有https）访问WebDAV服务器上的密码文件。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-c2d96c39ef0d0043.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+<li class="md_li"><span>输入服务器地址，webdav服务账号密码。就可以打开数据库了。<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-8f8208107761cd5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" >
+</span></li>
+</ol>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>这样三台设备就可以访问一个密码文件，实现密码的同步，就不用手动复制各个设备了，不过还是建议多备份几次，防止密码丢失。</strong></span>
+</p>
+
+<h3 id="toc_5" class="h16">Chrome自动填写密码扩展程序</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start">KeePassXC-Browser<br /></span>
+    <span class="md_line">谷歌应用商店自行下载，可能需要梯子。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image next_md_line next_img_before next_only_img_before"><img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-c92aec30a32b5444.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ><br /></span>
+    <span class="md_line img_before only_img_before">首先确认客户端APP已经打开，之后点击扩展程序图标，Connect！<img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-eb18a89eeb7dbb94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ><br /></span>
+    <span class="md_line">当访问密码库文件中保存的账号和网址时，就会自动填写账号密码。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/7080951-6dcfeccccf17e5fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="" ></span>
+</p>
+
+
+<blockquote class="blockquote_lines_2">
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><a class="md_compiled" href="http://www.matianhe.cn">博客地址：www.matianhe.cn</a><br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
+</p>
+
+</blockquote>
+        </div>
+    </div>
+    <!--mathjax-->
+    <!--mermaid-->
+</body>
+</html>
