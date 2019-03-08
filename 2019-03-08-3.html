@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="renderer" content="webkit"/>
+    <title>服务器搭建ss科学上网学习工具</title>
+    <link rel="stylesheet" href="data:text/css;base64,CiAgICBoMSwgaDIsIGgzLCBoNSwgaDYsICBpbWcsIHN2ZywgcHJlLCB0YWJsZSwgdHIsIC5tZF9saW5le3BhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZH0KCgogICAgYm9keSB7CiAgICAgICAgYmFja2dyb3VuZDogI0ZGRkZGRjsKICAgICAgICBmb250LXNpemU6IDE2cHg7CiAgICAgICAgbGluZS1oZWlnaHQ6Mi4wOwogICAgICAgIGZvbnQtZmFtaWx5OiAiS2FpdGkgU0MiOwogICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgICAgICAgY29sb3I6ICMzQzNDM0M7CiAgICAgICAgcGFkZGluZzogMCAzOHB4OwogICAgICAgIG1heC13aWR0aDogODIwcHg7CiAgICAgICAgbWFyZ2luOiAwIGF1dG87CgogICAgICAgIHdvcmQtd3JhcDpicmVhay13b3JkOwogICAgICAgIHdvcmQtYnJlYWs6IG5vcm1hbDsKICAgICAgICBvdmVyZmxvdy13cmFwOmJyZWFrLXdvcmQ7CgoKICAgICAgICBvdmVyZmxvdy14OiBoaWRkZW47CiAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTsKICAgICAgICAtd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6IG5vbmU7CiAgICB9CgogICAgYnJ7CiAgICAgICAgbGluZS1oZWlnaHQ6IDIuMDsKICAgIH0KCgoKICAgIEBtZWRpYSAobWF4LXdpZHRoOiA2MDBweCkgewogICAgICAgIGJvZHl7CiAgICAgICAgICAgIHBhZGRpbmc6IDAgMzBweDsKICAgICAgICB9CiAgICB9CgogICAgQG1lZGlhIChtYXgtd2lkdGg6IDQ4MHB4KSB7CiAgICAgICAgYm9keXsKICAgICAgICAgICAgcGFkZGluZzogMCAyMHB4OwogICAgICAgIH0KICAgIH0KCiAgICAuZ2lzdHsKICAgICAgICB3b3JkLWJyZWFrOiBub3JtYWw7CiAgICB9CgogICAgLnBvc3R7CiAgICAgICAgbWFyZ2luLXRvcDogMTBweDsKICAgICAgICBtYXJnaW4tYm90dG9tOiA1MHB4OwogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgIH0KCgoKICAgIGltZ3sKICAgICAgICBtYXgtd2lkdGg6IDk4JTsKICAgICAgICBtYXJnaW46IDAuOGVtIGF1dG8gMC44ZW0gYXV0bzsKICAgIH0KCiAgICBoMSBpbWcsIGgyIGltZywgaDMgaW1nLCBoNCBpbWcsIGg1IGltZywgaDYgaW1newogICAgICAgIG1hcmdpbjogYXV0bzsKICAgIH0KCiAgICAueDJfaW1hZ2V7CiAgICAgICAgem9vbTogNTAlOwogICAgfQoKICAgIC54M19pbWFnZXsKICAgICAgICB6b29tOiAzMy4zMyU7CiAgICB9CgogICAgLng0X2ltYWdlewogICAgICAgIHpvb206IDI1JTsKICAgIH0KCgogICAgcCBpbWd7CiAgICAgICAgbWFyZ2luOiAwIGF1dG87CiAgICB9CgogICAgcHsKICAgICAgICAvKm92ZXJmbG93OmhpZGRlbjsqLwogICAgICAgIG1hcmdpbjogMS4wZW0gMCAxLjVlbSAwOwogICAgfQoKICAgIHAubWRfYmxvY2tfYXNfb3BlbmluZ3sKICAgICAgICBtYXJnaW4tYm90dG9tOiAtMC41ZW0gIWltcG9ydGFudDsKICAgIH0KCiAgICBsaSBwewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjg7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQoKICAgIC5wX3BhcnQgewogICAgICAgIG1hcmdpbjogMTBweCAwOwogICAgfQoKICAgIC5wX3BhcnQgcHsKICAgICAgICBtYXJnaW46IDAgMCAwLjZlbSAwOwogICAgfQoKICAgIC8qIHRleHQgaW5kZW50IGZvciBjaGluZXNlIHN0YXJ0cyovCiAgICAvKmgyLCBoMywgaDQsIGg1LCBoNiwgLnBfcGFydCBwLCAudG9kb19pdGVtLCBwewogICAgICAgIHRleHQtaW5kZW50OiAwcHg7CiAgICB9Ki8KICAgIHRhYmxlLCBwcmUsIHN2ZywgLmNvZGVoaWxpdGV0YWJsZXsKICAgICAgICBtYXJnaW4tbGVmdDogMHB4OwogICAgICAgIG1hcmdpbi1yaWdodDogMHB4OwogICAgfQoKICAgIC5jb2RlaGlsaXRldGFibGUgcHJlewogICAgICAgIG1hcmdpbi1sZWZ0OiAwOwogICAgICAgIG1hcmdpbi1yaWdodDogMDsKCiAgICB9CgogICAgLmNvZGVoaWxpdGV0YWJsZSAuY29kZWhpbGl0ZSBwcmV7CiAgICAgICAgYm9yZGVyLWxlZnQ6IG5vbmU7CiAgICB9CgogICAgLyogdGV4dCBpbmRlbnQgZm9yIGNoaW5lc2UgZW5kcyovCgoKICAgIGJsb2NrcXVvdGUgLnBfcGFydCBwLCBsaSAucF9wYXJ0IHB7CiAgICAgICAgdGV4dC1pbmRlbnQ6IDAgIWltcG9ydGFudDsKICAgIH0KCgogICAgaHJ7CiAgICAgICAgbWFyZ2luOiAzOHB4IDA7CiAgICAgICAgYm9yZGVyOiBub25lOwogICAgICAgIGJvcmRlci1ib3R0b206IDFweCBkYXNoZWQgcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICBjb2xvcjogcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICBoZWlnaHQ6IDFweDsKICAgICAgICBsaW5lLWhlaWdodDoxcHg7CiAgICAgICAgZm9udC1zaXplOjFweDsKICAgICAgICBvdmVyZmxvdy15OiBoaWRkZW47CiAgICB9CgoKICAgIGgxewogICAgICAgIGNvbG9yOiAjMTBBM0VFOwogICAgICAgIGZvbnQtc2l6ZTogMS42ZW07CiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDsKICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBsaW5lLWhlaWdodDogMS42ZW07CiAgICAgICAgbWFyZ2luLXRvcDogMC44ZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC42ZW07CiAgICB9CgogICAgaDEsIGgyLCBoMywgaDR7CiAgICAgICAgY29sb3I6ICMxMEEzRUU7CiAgICB9CgoKICAgIGgyLCBoM3sKICAgICAgICBsaW5lLWhlaWdodDogMS41ZW07CiAgICAgICAgbWFyZ2luLXRvcDogMS44ZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC41ZW07CiAgICB9CgogICAgLmgxNi5tZF9maXJzdF9oLm1kX2ZpcnN0X3BhcnQgewogICAgICAgIG1hcmdpbi10b3A6IDVweDsKICAgIH0KCiAgICBoMiB7CiAgICAgICAgZm9udC1zaXplOiAxLjM1ZW07CiAgICB9CgogICAgaDMgewogICAgICAgIGZvbnQtc2l6ZTogMS4yZW0KICAgIH0KCiAgICBoNCB7CiAgICAgICAgZm9udC1zaXplOiAxLjFlbTsKICAgIH0KCiAgICBoNSB7CiAgICAgICAgZm9udC1zaXplOiAxLjE1ZW07CiAgICB9CgogICAgaDYge2ZvbnQtc2l6ZTogMWVtfQoKCiAgICBoMSwgaDIsIGgzLCBoNCwgaDUsIGg2ewogICAgICAgIGZvbnQtZmFtaWx5OiAiSGVpdGkgU0MiOwogICAgfQoKCiAgICBvbCB7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQoKICAgIHVsewogICAgICAgIHBhZGRpbmc6IDVweCAzOHB4OwogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICB1bCBsaSwgbGl7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CgogICAgdWwgcCwgb2wgcHsKICAgICAgICBvdmVyZmxvdzogdmlzaWJsZTsKICAgIH0KCgogICAgYmxvY2txdW90ZSB7CiAgICAgICAgLW1vei1ib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgbWFyZ2luOiAxLjZlbSAwOwogICAgICAgIHBhZGRpbmc6IDAgMCAwIDEuMmVtOwogICAgICAgIGJvcmRlci1sZWZ0OiAwLjRlbSBzb2xpZCAjMTZCMEZGOwogICAgICAgIGNvbG9yOiAjODg4ODg4OwogICAgICAgIG1pbi1oZWlnaHQ6MjBweDsKICAgIH0KCgogICAgYmxvY2txdW90ZSBwIHsKICAgICAgICBtYXJnaW46IDAuOGVtIDA7CiAgICB9CgogICAgYmxvY2txdW90ZSBzcGFuLm1kX2xpbmUgewogICAgICAgIG1hcmdpbi1ib3R0b206IDAuMjVlbTsKICAgICAgICBtYXJnaW4tdG9wOiAwLjI1ZW07CiAgICB9CgogICAgYmxvY2txdW90ZSB1bHsKICAgICAgICBwYWRkaW5nOiAwIDE1cHg7CiAgICB9CgogICAgYmxvY2txdW90ZSBzbWFsbCB7CiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrOwogICAgICAgIG1hcmdpbjogMC44ZW0gMCAwLjhlbSAxLjVlbTsKICAgICAgICBmb250LXNpemU6IDAuOWVtOwogICAgICAgIGNvbG9yOiAjY2NjOwogICAgfQoKCgoKCgogICAgdGFibGUgewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjc7CiAgICAgICAgLW1vei1ib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgbWFyZ2luOiAxZW0gMDsKICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICBtYXgtd2lkdGg6IDEwMCU7CiAgICAgICAgYm9yZGVyLXdpZHRoOiAxcHg7CiAgICAgICAgYm9yZGVyLXN0eWxlOiBzb2xpZDsKICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICAgICAgICBib3JkZXItc3BhY2luZzogMDsKICAgICAgICB3b3JkLWJyZWFrOiBub3JtYWw7CiAgICB9CiAgICAKICAgIC8qIGZvciB3ZWNoYXQgb25seSBzdGFydHMgKi8KICAgIHRhYmxlIHRyewogICAgICAgIGJvcmRlci1yaWdodC1zdHlsZTogc29saWQ7CiAgICAgICAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxcHg7CiAgICB9CiAgICAKICAgIHRhYmxlIHRib2R5ewogICAgICAgIGJvcmRlci1ib3R0b20td2lkdGg6IDFweDsKICAgICAgICBib3JkZXItYm90dG9tLXN0eWxlOiBzb2xpZDsKICAgIH0KICAgIC8qIGZvciB3ZWNoYXQgb25seSBlbmRzICovCgoKICAgIHRhYmxlLCB0YWJsZSB0ciwgdGFibGUgdHIgdGQsIHRhYmxlIHRyIHRoLCB0YWJsZSB0Ym9keSB7CiAgICAgICAgYm9yZGVyLWNvbG9yOiByZ2JhKDIwNSwgMjA1LCAyMDUsIDAuMzUpOwogICAgfQoKICAgIHRhYmxlIHRoIHsKICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgIH0KCiAgICB0ciB0aCB7CiAgICAgICAgYm9yZGVyLWJvdHRvbS13aWR0aDogMXB4OwogICAgICAgIGJvcmRlci1ib3R0b20tc3R5bGU6IHNvbGlkOwogICAgICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICB9CgogICAgdHIgdGgsIHRyIHRkIHsKICAgICAgICBwYWRkaW5nOiAxMHB4IDIwcHg7CiAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQ7CiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoMjA1LCAyMDUsIDIwNSwgMC4zNSk7CiAgICB9CgogICAgdGJvZHkgdHI6bGFzdC1jaGlsZCB0ZHsKICAgICAgICBib3JkZXItYm90dG9tOiAwOwogICAgfQoKICAgIHRyIHRoOmxhc3QtY2hpbGQsIHRyIHRkOmxhc3QtY2hpbGQgewogICAgICAgIGJvcmRlci1yaWdodDogMDsKICAgIH0KCiAgICB0YWJsZSB0Ym9keSA+IHRyOm50aC1jaGlsZChvZGQpID4gdGQsIHRhYmxlIHRib2R5ID4gdHI6bnRoLWNoaWxkKG9kZCkgPiB0aCB7CiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyMzUsIDIzNSwgMjM1LCAwLjIpOwogICAgfQoKCgoKICAgIGNvZGV7CiAgICAgICAgYmFja2dyb3VuZDogcmdiYSgyMzUsIDIzNSwgMjM1LCAwLjM1KTsKICAgICAgICBjb2xvcjogIzQ4QjQ1NjsKICAgICAgICBwYWRkaW5nOiAwIDVweDsKICAgICAgICBtYXJnaW46IDAgMnB4OwogICAgfQoKICAgIHByZXsKICAgICAgICBtYXJnaW4tdG9wOiAxLjJlbTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAxLjJlbTsKICAgICAgICBwYWRkaW5nOiAxNXB4IDEwcHg7CiAgICAgICAgZGlzcGxheTogYmxvY2s7CiAgICAgICAgLyogb3ZlcmZsb3c6IGF1dG87ICovCiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgICAgICAvKmJhY2tncm91bmQ6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4zNSk7Ki8KICAgICAgICBmb250LXNpemU6IDkwJTsKICAgICAgICBsaW5lLWhlaWdodDoyLjA7CiAgICAgICAgd2hpdGUtc3BhY2U6IHByZS13cmFwOwogICAgfQoKICAgIC5oaWdobGlnaHR0YWJsZSB0ZHsKICAgICAgICAvKmJhY2tncm91bmQtY29sb3I6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4zNSkgIWltcG9ydGFudDsqLwogICAgfQoKICAgIC53aXRoX2xpbmVzIHByZXsKICAgICAgICBib3JkZXI6bm9uZTsKICAgICAgICBtYXJnaW4tdG9wOiAwLjJlbTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjJlbTsKICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsKICAgIH0KCiAgICAuaXNfY29kZV9maWxlIHByZXsKICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7CiAgICB9CgogICAgLmNvZGVoaWxpdGUgcHJlewogICAgICAgIC8qd29yZC13cmFwOiBub3JtYWw7Ki8KICAgICAgICBmb250LXNpemU6IDEzcHg7CiAgICB9CgogICAgcHJlIGNvZGV7CiAgICAgICAgYm9yZGVyOm5vbmU7CiAgICAgICAgYmFja2dyb3VuZDogbm9uZTsKICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICBwcmUgcHsKICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgcGFkZGluZzogMDsKICAgIH0KCiAgICAuY29kZWhpbGl0ZSB0aCwgLmNvZGVoaWxpdGUgdGR7CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuOGVtOwogICAgfQoKCiAgICBhewogICAgICAgIGNvbG9yOiAjNDA4M0M0OwogICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKICAgICAgICAvL2JvcmRlci1ib3R0b206IDFweCBzb2xpZCB0cmFuc3BhcmVudDsKICAgIH0KCiAgICBhOmhvdmVyewogICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOwogICAgICAgIC8vYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICM0MDgzQzQ7CiAgICB9CgogICAgc3Ryb25nIHsKICAgICAgICBjb2xvcjogIzAwMDAwMDsKICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgIH0KCgogICAgLyogZm9yIG1hcmtkb3duICovCgogICAgLmxpbmVub3MgcHJlewoJCWJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwoJCWJvcmRlcjogbm9uZTsKCX0KCgkubGluZW5vc3sKCSAgICBwYWRkaW5nOiAwIDVweCAwIDVweDsKCSAgICB3aWR0aDogMC4wMDElOwoJfQoKCS5oaWdobGlnaHR0YWJsZSBwcmV7CgkgICAgcGFkZGluZzogNXB4IDEwcHg7Cgl9CgogICAgLnRvY3sKICAgICAgICBiYWNrZ3JvdW5kOiBOb25lOwogICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDsKICAgICAgICBib3JkZXI6IDFweCBzb2xpZCBOb25lOwogICAgICAgIG1hcmdpbjogMjdweCAwIDQ3cHggMDsKICAgICAgICBwYWRkaW5nOiAxMHB4IDA7CiAgICB9CgogICAgLnRvYyB1bHsKICAgICAgICAvL3BhZGRpbmc6IDVweCA0MnB4OwogICAgfQoKICAgIC50b2MgdWwgbGl7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CiAgICAudG9jIGF7CiAgICAgICAgY29sb3I6ICMzQzNDM0M7CiAgICB9CgoKCiAgICAudG9kb19pdGVtewogICAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7CiAgICAgICAgbWFyZ2luLWxlZnQ6IC0xLjVlbQogICAgfQogICAgLnRvZG9faXRlbSAudG9kb19pdGVtIHsKICAgICAgICBtYXJnaW4tbGVmdDogYXV0bzsKICAgIH0KCiAgICAudG9kb19kb25lX2l0ZW17CiAgICAgICAgY29sb3I6ICM5OTk5OTk7CiAgICB9CgogICAgLnRvZG9fdW5kb25lX2l0ZW17CiAgICAgICAgY29sb3I6ICNDODVBNTc7CiAgICB9CgoKICAgIHVsIGxpLnRvZG9faXRlbXsKCWxpc3Qtc3R5bGUtdHlwZTogbm9uZTsKICAgIH0KCiAgICB1bCBsaS50b2RvX2l0ZW06YmVmb3JlewogICAgICAgIGNvbnRlbnQ6ICfimJAnOwogICAgICAgIC8qcGFkZGluZy1yaWdodDogMC4yZW07Ki8KICAgICAgICBmb250LWZhbWlseTogYXJpYWw7CiAgICB9CgogICAgdWwgbGkudG9kb19kb25lX2l0ZW06YmVmb3JlewogICAgICAgIGNvbnRlbnQ6ICfimJEnOwogICAgICAgIC8qcGFkZGluZy1yaWdodDogMC4yZW07Ki8KICAgICAgICBmb250LWZhbWlseTogYXJpYWw7CiAgICB9CgogICAgdWwgbGkudG9kb19pdGVtIGlucHV0ewogICAgICAgIGRpc3BsYXk6bm9uZQogICAgfQoKCiAgICAvKnB5Z21lbnRzKi8KCiAgICAuY29kZWhpbGl0ZXsKICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50OwogICAgfQoKICAgIHRhYmxlLmNvZGVoaWxpdGV0YWJsZXsgYm9yZGVyOm5vbmU7IH0KCgogICAgLmNvZGVoaWxpdGV0YWJsZSB0ZHsgYm9yZGVyOiBub25lOyBwYWRkaW5nOiAwO30KCiAgICAuZmxvdy1ncmFwaGljLCAubWRfYmxvY2tfc2VjdGlvbl9mb3JfZmxvd19ncmFwaGlje3RleHQtYWxpZ246IGNlbnRlcn0KICAgIC5mbG93LWdyYXBoaWMgeyBvdmVyZmxvdy14OiBhdXRvO30KICAgIC5tZXJtYWlkLCAubWRfYmxvY2tfc2VjdGlvbl9mb3JfbWVybWFpZHt0ZXh0LWFsaWduOiBjZW50ZXJ9CgoKICAgIHRhYmxlLCB0ciwgdGQsIHRoLCB0Ym9keSwgdGhlYWQsIHRmb290LCAubWRfZWNoYXJ0cywgYmxvY2txdW90ZSAubWRfbGluZXsKICAgICAgICBwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQgIWltcG9ydGFudDsKICAgIH0KCiAgICAuZm9vdG5vdGVzIC5tZF9saW5lewogICAgICAgIGRpc3BsYXk6IGlubGluZSAhaW1wb3J0YW50OwogICAgfQoKCiAgICAuaW1nX3J0XzkwewogICAgICAgIHRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgICAgIC1tcy10cmFuc2Zvcm06cm90YXRlKDkwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgICAgIC13ZWJraXQtdHJhbnNmb3JtOnJvdGF0ZSg5MGRlZyk7CiAgICAgICAgLW8tdHJhbnNmb3JtOnJvdGF0ZSg5MGRlZyk7CiAgICB9CiAgICAuaW1nX3J0XzE4MHsKICAgICAgICB0cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICAgICAgLW1zLXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTpyb3RhdGUoMTgwZGVnKTsKICAgICAgICAtby10cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICB9CiAgICAuaW1nX3J0XzI3MHsKICAgICAgICB0cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICAgICAgLW1zLXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtbW96LXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTpyb3RhdGUoMjcwZGVnKTsKICAgICAgICAtby10cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICB9CgogICAgLm1kX2hhc19ibG9ja19iZWxvd3sKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjFlbSAhaW1wb3J0YW50OwogICAgfQogICAgLm1kX2hhc19ibG9ja19iZWxvd19pbWd7CiAgICAgICAgbWFyZ2luLWJvdHRvbTogLTAuNmVtICFpbXBvcnRhbnQ7CiAgICB9CgoKICAgIC5jb2RlaGlsaXRlIC5lcnJ7CiAgICAgICAgYm9yZGVyOiBub25lICFpbXBvcnRhbnQ7CiAgICB9CgoKCiAgICAgICAgc3Bhbi5tZF9saW5le21hcmdpbi1ib3R0b206MC41ZW07IGRpc3BsYXk6YmxvY2s7IGxpbmUtaGVpZ2h0OjEuNzN9CiAgICAgICAgLm1kX2xpbmUgYnJ7IGRpc3BsYXk6IG5vbmU7fQogICAgICAgIC5jb2RlaGlsaXRlIC5obGwgeyBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmNjIH0KLmNvZGVoaWxpdGUgIHsgYmFja2dyb3VuZDogI2VlZWVkZDsgfQouY29kZWhpbGl0ZSAuYyB7IGNvbG9yOiAjOTk5OTk5IH0gLyogQ29tbWVudCAqLwouY29kZWhpbGl0ZSAuZXJyIHsgY29sb3I6ICNhNjE3MTc7IGJhY2tncm91bmQtY29sb3I6ICNlM2QyZDIgfSAvKiBFcnJvciAqLwouY29kZWhpbGl0ZSAuayB7IGNvbG9yOiAjOEIwMDhCOyBmb250LXdlaWdodDogYm9sZCB9IC8qIEtleXdvcmQgKi8KLmNvZGVoaWxpdGUgLmwgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwgKi8KLmNvZGVoaWxpdGUgLm4geyBjb2xvcjogIzU1NTU1NSB9IC8qIE5hbWUgKi8KLmNvZGVoaWxpdGUgLm8geyBjb2xvcjogIzU1NTU1NSB9IC8qIE9wZXJhdG9yICovCi5jb2RlaGlsaXRlIC5wIHsgY29sb3I6ICM1NTU1NTUgfSAvKiBQdW5jdHVhdGlvbiAqLwouY29kZWhpbGl0ZSAuY2ggeyBjb2xvcjogIzk5OTk5OSB9IC8qIENvbW1lbnQuSGFzaGJhbmcgKi8KLmNvZGVoaWxpdGUgLmNtIHsgY29sb3I6ICM5OTk5OTkgfSAvKiBDb21tZW50Lk11bHRpbGluZSAqLwouY29kZWhpbGl0ZSAuY3AgeyBjb2xvcjogIzFlODg5YiB9IC8qIENvbW1lbnQuUHJlcHJvYyAqLwouY29kZWhpbGl0ZSAuY3BmIHsgY29sb3I6ICM5OTk5OTkgfSAvKiBDb21tZW50LlByZXByb2NGaWxlICovCi5jb2RlaGlsaXRlIC5jMSB7IGNvbG9yOiAjOTk5OTk5IH0gLyogQ29tbWVudC5TaW5nbGUgKi8KLmNvZGVoaWxpdGUgLmNzIHsgY29sb3I6ICM4QjAwOEI7IGZvbnQtd2VpZ2h0OiBib2xkIH0gLyogQ29tbWVudC5TcGVjaWFsICovCi5jb2RlaGlsaXRlIC5nZCB7IGNvbG9yOiAjYWEwMDAwIH0gLyogR2VuZXJpYy5EZWxldGVkICovCi5jb2RlaGlsaXRlIC5nZSB7IGZvbnQtc3R5bGU6IGl0YWxpYyB9IC8qIEdlbmVyaWMuRW1waCAqLwouY29kZWhpbGl0ZSAuZ3IgeyBjb2xvcjogI2FhMDAwMCB9IC8qIEdlbmVyaWMuRXJyb3IgKi8KLmNvZGVoaWxpdGUgLmdoIHsgY29sb3I6ICMwMDAwODA7IGZvbnQtd2VpZ2h0OiBib2xkIH0gLyogR2VuZXJpYy5IZWFkaW5nICovCi5jb2RlaGlsaXRlIC5naSB7IGNvbG9yOiAjMDBhYTAwIH0gLyogR2VuZXJpYy5JbnNlcnRlZCAqLwouY29kZWhpbGl0ZSAuZ28geyBjb2xvcjogIzg4ODg4OCB9IC8qIEdlbmVyaWMuT3V0cHV0ICovCi5jb2RlaGlsaXRlIC5ncCB7IGNvbG9yOiAjNTU1NTU1IH0gLyogR2VuZXJpYy5Qcm9tcHQgKi8KLmNvZGVoaWxpdGUgLmdzIHsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBHZW5lcmljLlN0cm9uZyAqLwouY29kZWhpbGl0ZSAuZ3UgeyBjb2xvcjogIzgwMDA4MDsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBHZW5lcmljLlN1YmhlYWRpbmcgKi8KLmNvZGVoaWxpdGUgLmd0IHsgY29sb3I6ICNhYTAwMDAgfSAvKiBHZW5lcmljLlRyYWNlYmFjayAqLwouY29kZWhpbGl0ZSAua2MgeyBjb2xvcjogIzhCMDA4QjsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBLZXl3b3JkLkNvbnN0YW50ICovCi5jb2RlaGlsaXRlIC5rZCB7IGNvbG9yOiAjOEIwMDhCOyBmb250LXdlaWdodDogYm9sZCB9IC8qIEtleXdvcmQuRGVjbGFyYXRpb24gKi8KLmNvZGVoaWxpdGUgLmtuIHsgY29sb3I6ICM4QjAwOEI7IGZvbnQtd2VpZ2h0OiBib2xkIH0gLyogS2V5d29yZC5OYW1lc3BhY2UgKi8KLmNvZGVoaWxpdGUgLmtwIHsgY29sb3I6ICM4QjAwOEI7IGZvbnQtd2VpZ2h0OiBib2xkIH0gLyogS2V5d29yZC5Qc2V1ZG8gKi8KLmNvZGVoaWxpdGUgLmtyIHsgY29sb3I6ICM4QjAwOEI7IGZvbnQtd2VpZ2h0OiBib2xkIH0gLyogS2V5d29yZC5SZXNlcnZlZCAqLwouY29kZWhpbGl0ZSAua3QgeyBjb2xvcjogI2E3YTdhNzsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBLZXl3b3JkLlR5cGUgKi8KLmNvZGVoaWxpdGUgLmxkIHsgY29sb3I6ICNlNmRiNzQgfSAvKiBMaXRlcmFsLkRhdGUgKi8KLmNvZGVoaWxpdGUgLm0geyBjb2xvcjogI0I0NTJDRCB9IC8qIExpdGVyYWwuTnVtYmVyICovCi5jb2RlaGlsaXRlIC5zIHsgY29sb3I6ICNDRDU1NTUgfSAvKiBMaXRlcmFsLlN0cmluZyAqLwouY29kZWhpbGl0ZSAubmEgeyBjb2xvcjogIzY1OGIwMCB9IC8qIE5hbWUuQXR0cmlidXRlICovCi5jb2RlaGlsaXRlIC5uYiB7IGNvbG9yOiAjNjU4YjAwIH0gLyogTmFtZS5CdWlsdGluICovCi5jb2RlaGlsaXRlIC5uYyB7IGNvbG9yOiAjMDA4YjQ1OyBmb250LXdlaWdodDogYm9sZCB9IC8qIE5hbWUuQ2xhc3MgKi8KLmNvZGVoaWxpdGUgLm5vIHsgY29sb3I6ICMwMDY4OEIgfSAvKiBOYW1lLkNvbnN0YW50ICovCi5jb2RlaGlsaXRlIC5uZCB7IGNvbG9yOiAjNzA3YTdjIH0gLyogTmFtZS5EZWNvcmF0b3IgKi8KLmNvZGVoaWxpdGUgLm5pIHsgY29sb3I6ICM1NTU1NTUgfSAvKiBOYW1lLkVudGl0eSAqLwouY29kZWhpbGl0ZSAubmUgeyBjb2xvcjogIzAwOGI0NTsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBOYW1lLkV4Y2VwdGlvbiAqLwouY29kZWhpbGl0ZSAubmYgeyBjb2xvcjogIzAwOGI0NSB9IC8qIE5hbWUuRnVuY3Rpb24gKi8KLmNvZGVoaWxpdGUgLm5sIHsgY29sb3I6ICM1NTU1NTUgfSAvKiBOYW1lLkxhYmVsICovCi5jb2RlaGlsaXRlIC5ubiB7IGNvbG9yOiAjMDA4YjQ1IH0gLyogTmFtZS5OYW1lc3BhY2UgKi8KLmNvZGVoaWxpdGUgLm54IHsgY29sb3I6ICM1NTU1NTUgfSAvKiBOYW1lLk90aGVyICovCi5jb2RlaGlsaXRlIC5weSB7IGNvbG9yOiAjNTU1NTU1IH0gLyogTmFtZS5Qcm9wZXJ0eSAqLwouY29kZWhpbGl0ZSAubnQgeyBjb2xvcjogIzhCMDA4QjsgZm9udC13ZWlnaHQ6IGJvbGQgfSAvKiBOYW1lLlRhZyAqLwouY29kZWhpbGl0ZSAubnYgeyBjb2xvcjogIzAwNjg4QiB9IC8qIE5hbWUuVmFyaWFibGUgKi8KLmNvZGVoaWxpdGUgLm93IHsgY29sb3I6ICM4QjAwOEIgfSAvKiBPcGVyYXRvci5Xb3JkICovCi5jb2RlaGlsaXRlIC53IHsgY29sb3I6ICNiYmJiYmIgfSAvKiBUZXh0LldoaXRlc3BhY2UgKi8KLmNvZGVoaWxpdGUgLm1iIHsgY29sb3I6ICNCNDUyQ0QgfSAvKiBMaXRlcmFsLk51bWJlci5CaW4gKi8KLmNvZGVoaWxpdGUgLm1mIHsgY29sb3I6ICNCNDUyQ0QgfSAvKiBMaXRlcmFsLk51bWJlci5GbG9hdCAqLwouY29kZWhpbGl0ZSAubWggeyBjb2xvcjogI0I0NTJDRCB9IC8qIExpdGVyYWwuTnVtYmVyLkhleCAqLwouY29kZWhpbGl0ZSAubWkgeyBjb2xvcjogI0I0NTJDRCB9IC8qIExpdGVyYWwuTnVtYmVyLkludGVnZXIgKi8KLmNvZGVoaWxpdGUgLm1vIHsgY29sb3I6ICNCNDUyQ0QgfSAvKiBMaXRlcmFsLk51bWJlci5PY3QgKi8KLmNvZGVoaWxpdGUgLnNhIHsgY29sb3I6ICNDRDU1NTUgfSAvKiBMaXRlcmFsLlN0cmluZy5BZmZpeCAqLwouY29kZWhpbGl0ZSAuc2IgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkJhY2t0aWNrICovCi5jb2RlaGlsaXRlIC5zYyB7IGNvbG9yOiAjQ0Q1NTU1IH0gLyogTGl0ZXJhbC5TdHJpbmcuQ2hhciAqLwouY29kZWhpbGl0ZSAuZGwgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkRlbGltaXRlciAqLwouY29kZWhpbGl0ZSAuc2QgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkRvYyAqLwouY29kZWhpbGl0ZSAuczIgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkRvdWJsZSAqLwouY29kZWhpbGl0ZSAuc2UgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkVzY2FwZSAqLwouY29kZWhpbGl0ZSAuc2ggeyBjb2xvcjogIzFjN2U3MTsgZm9udC1zdHlsZTogaXRhbGljIH0gLyogTGl0ZXJhbC5TdHJpbmcuSGVyZWRvYyAqLwouY29kZWhpbGl0ZSAuc2kgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLkludGVycG9sICovCi5jb2RlaGlsaXRlIC5zeCB7IGNvbG9yOiAjY2I2YzIwIH0gLyogTGl0ZXJhbC5TdHJpbmcuT3RoZXIgKi8KLmNvZGVoaWxpdGUgLnNyIHsgY29sb3I6ICMxYzdlNzEgfSAvKiBMaXRlcmFsLlN0cmluZy5SZWdleCAqLwouY29kZWhpbGl0ZSAuczEgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLlNpbmdsZSAqLwouY29kZWhpbGl0ZSAuc3MgeyBjb2xvcjogI0NENTU1NSB9IC8qIExpdGVyYWwuU3RyaW5nLlN5bWJvbCAqLwouY29kZWhpbGl0ZSAuYnAgeyBjb2xvcjogIzY1OGIwMCB9IC8qIE5hbWUuQnVpbHRpbi5Qc2V1ZG8gKi8KLmNvZGVoaWxpdGUgLmZtIHsgY29sb3I6ICMwMDhiNDUgfSAvKiBOYW1lLkZ1bmN0aW9uLk1hZ2ljICovCi5jb2RlaGlsaXRlIC52YyB7IGNvbG9yOiAjMDA2ODhCIH0gLyogTmFtZS5WYXJpYWJsZS5DbGFzcyAqLwouY29kZWhpbGl0ZSAudmcgeyBjb2xvcjogIzAwNjg4QiB9IC8qIE5hbWUuVmFyaWFibGUuR2xvYmFsICovCi5jb2RlaGlsaXRlIC52aSB7IGNvbG9yOiAjMDA2ODhCIH0gLyogTmFtZS5WYXJpYWJsZS5JbnN0YW5jZSAqLwouY29kZWhpbGl0ZSAudm0geyBjb2xvcjogIzAwNjg4QiB9IC8qIE5hbWUuVmFyaWFibGUuTWFnaWMgKi8KLmNvZGVoaWxpdGUgLmlsIHsgY29sb3I6ICNCNDUyQ0QgfSAvKiBMaXRlcmFsLk51bWJlci5JbnRlZ2VyLkxvbmcgKi8KICAgIC8qIHBhZ2VfY3NzICovCgogICAgCiAgICBodG1sewogICAgICAgIGJhY2tncm91bmQ6ICNFRUVFRUU7CiAgICB9CiAgICBib2R5ewogICAgICAgIHdpZHRoOiA5MCU7CiAgICAgICAgbWF4LXdpZHRoOiA5NjBweDsKICAgICAgICBiYWNrZ3JvdW5kOiAjRkZGRkZGOwogICAgICAgIG1hcmdpbjogM2VtIGF1dG8gMDsKICAgICAgICBwYWRkaW5nLXRvcDogMmVtOwogICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNFRUVFRUU7CiAgICAgICAgYm9yZGVyLXdpZHRoOiAwIDFweDsKICAgIH0KCiAgICAucG9zdHsKICAgICAgICBwYWRkaW5nOiA1JSAxMCU7CiAgICAgICAgbWFyZ2luLXRvcDogMDsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwOwogICAgfQogICAgCgogICAgLnRpdGxlX2NvbnRhaW5lcnsKICAgICAgICBtYXJnaW46IC0yZW0gMCAzLjVlbTsKICAgICAgICBwYWRkaW5nLWJvdHRvbTogMmVtOwogICAgICAgIGJvcmRlci1ib3R0b206IDNweCBkb3VibGUgI0VFRUVFRTsKICAgIH0KICAgIC50aXRsZV9jb250YWluZXIgaDF7CiAgICAgICAgbWFyZ2luLXRvcDogMS4yZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC42ZW07CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuMzU7CiAgICAgICAgZm9udC1zaXplOiAyLjI1ZW07CiAgICB9CiAgICAudGl0bGVfY29udGFpbmVyIGgyewogICAgICAgIGNvbG9yOiAjODg4ODg4OwogICAgICAgIGZvbnQtc2l6ZTogMWVtOwogICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgICAgICAgcGFkZGluZy1ib3R0b206IDJlbTsKICAgICAgICBsaW5lLWhlaWdodDogMS4zNTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAtMmVtOwogICAgfQoKICAgIEBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzYwcHgpewogICAgICAgIGh0bWx7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwogICAgICAgIH0KICAgICAgICBib2R5ewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgfQogICAgICAgIC5wb3N0ewogICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgIH0KICAgIH0KICAgIC8qIHBhZ2VfY3NzICovCgogICAg">
+    <!--header_scripts-->
+</head>
+<body>
+    <div class="post">
+        <div class="post_body">
+            
+                <div class=title_container>
+                    <h1> 服务器搭建ss科学上网学习工具 </h1>
+                    
+                </div>
+            
+            <blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">搭建科学上网工具，需要一台国外的服务器。可以去<a class="md_compiled" href="https://cloud.tencent.com/">腾讯云</a>，<a class="md_compiled" href="https://www.aliyun.com/">阿里云</a>，<a class="md_compiled" href="https://bandwagonhost.com/">搬瓦工</a>等服务商购买。</span>
+</p>
+
+</blockquote>
+<h2 id="toc_0" class="h16 md_first_h">服务器配置</h2>
+
+<ul>
+<li class="md_li"><span>操作系统推荐 CentOS7
+</span></li>
+<li class="md_li"><span>服务器购买和系统安装都可以在以上网站快速完成，直接进入连接上服务器之后的操作。
+</span></li>
+</ul>
+<h3 id="toc_1" class="h16">首先要给 ss 工具开通一个端口。</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>CentOS7 默认使用 iptables 防火墙</strong><br /></span>
+    <span class="md_line"> 开放 udp 9000 入口端口<br /></span>
+    <span class="md_line md_line_dom_embed"><code>iptables -I INPUT -p udp --dport 9000 -j ACCEPT</code><br /></span>
+    <span class="md_line">开放 tcp 9000 入口端口<br /></span>
+    <span class="md_line md_line_dom_embed"><code>iptables -I INPUT -p tcp --dport 9000 -j ACCEPT</code><br /></span>
+    <span class="md_line">查看目前防火墙的规则<br /></span>
+    <span class="md_line md_line_dom_embed"><code>iptables -L -n</code><br /></span>
+    <span class="md_line">测试端口是否可以连通，使用命令行工具<br /></span>
+    <span class="md_line md_line_dom_embed"><code>nc -z 服务器公网 ip 地址 端口号</code><br /></span>
+    <span class="md_line">eg: <code>nc -z 119.28.23.39 9000</code><br /></span>
+    <span class="md_line">如果无法连通可能是防火墙问题，尝试关闭防火墙(也有可能默认防火墙为 firewall)。<br /></span>
+    <span class="md_line md_line_dom_embed"><code>systemctl stop iptables.service</code><br /></span>
+    <span class="md_line md_line_dom_embed"><code>systemctl stop firewalld.service</code><br /></span>
+    <span class="md_line">如果是腾讯云的服务器，可能要配置一下安全组(腾讯云的防火墙)。<br /></span>
+    <span class="md_line md_line_end">打开服务器控制台，找到安全组，新建一个规则，名字随意起，然后添加两条入站规则，<code>0.0.0.0/0 UDP/TCP:9000</code>，添加完成之后，要让服务器加入这个安全组。</span>
+</p>
+
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">如果仍然无法 Ping 通，请自行百度如何开放端口。</span>
+</p>
+
+</blockquote>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/dd00eaeee628810390a4da2fc340051b.png" alt="" title="" ></span>
+</p>
+
+<h3 id="toc_2" class="h16">安装科学上网学习工具</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>安装依赖环境(基于 CentOS7)</strong><br /></span>
+    <span class="md_line md_line_dom_embed"><code>yum -y install dnf</code><br /></span>
+    <span class="md_line md_line_dom_embed"><code>dnf install libsodium python34-pip</code><br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><code>pip3 install  git+https://github.com/shadowsocks/shadowsocks.git@master</code></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>创建配置文件</strong><br /></span>
+    <span class="md_line">json文件的位置可以自己选择<br /></span>
+    <span class="md_line md_line_end"><code>vi shadowsocks.json</code>写入内容:</span>
+</p>
+
+
+<pre><code>{
+     # 服务器 IP eg: 119.28.33.48
+    "server":"my_server_ip",
+     # 服务端口号 eg: 9000
+    "server_port":8388,
+    # 本地 IP 无需改动
+    "local_address": "127.0.0.1",
+    # 本地端口号，无需改动，确保别的服务没有冲突。
+    "local_port":1080,
+    # 密码
+    "password":"mypassword",
+    # 超时时间，无需改动
+    "timeout":300,
+    # 加密方式，无需改动
+    "method":"rc4-md5",
+    # tcp 快速链接，无需改动
+    "fast_open": false
+}</code></pre>
+
+<!--block_code_end-->
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>启动服务</strong><br /></span>
+    <span class="md_line">直接运行，可查看连接情况:<br /></span>
+    <span class="md_line md_line_dom_embed"><code>ssserver -c /etc/shadowsocks.json</code><br /></span>
+    <span class="md_line">后台运行:<br /></span>
+    <span class="md_line md_line_dom_embed"><code>ssserver -c /etc/shadowsocks.json -d start</code><br /></span>
+    <span class="md_line">关闭服务:<br /></span>
+    <span class="md_line md_line_dom_embed md_line_end"><code>ssserver -c /etc/shadowsocks.json -d stop</code></span>
+</p>
+
+<h2 id="toc_3" class="h16">客户端配置</h2>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><a class="md_compiled" href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients">下载地址(支持 Android，iOS，Mac，Windows，Linux ……):</a><br /></span>
+    <span class="md_line md_line_dom_embed"><a class="md_compiled" href="https://shadowsocks.org/en/download/clients.html">下载地址 2 (支持 Android，iOS，Mac，Windows，Linux ……):</a><br /></span>
+    <span class="md_line md_line_end"><strong>Google应用商店</strong>提供下载</span>
+</p>
+
+<h3 id="toc_4" class="h16">Android 配置</h3>
+
+<p class="md_block">
+    <span class="md_line md_line_start">打开 APP 点击左上角添加代理服务器。服务器填写云主机的公网 IP 地址，端口填写之前开放的端口，密码是配置文件中的密码，加密方式按配置文件选择<code>rc4-md5</code>,路由设置，绕过局域网及中国大陆地址。配置完成之后，点击图一小飞机，测试是否连接成功。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/58e50e2a927f5a8d4406e68bc47499e1.jpg" alt="" title="" ><img class="md_compiled " src="file:///Users/matianhe/Documents/Blog/_images/21551845975_.pic.jpg?w=200" alt="" title="" style="max-width:200px;" width="200"></span>
+</p>
+
+<h3 id="toc_5" class="h16">Mac 配置</h3>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>浏览器配置(基于 Chrome 浏览器)</strong><br /></span>
+    <span class="md_line md_line_end">安装<code>Proxy SwitchyOmega</code>浏览器插件。 --用来快速切换浏览器代理。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>配置<code>Proxy SwitchyOmega</code>
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start">新建一个情景模式，选择 Proxy Profile，名字随意。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/252be63c02ea1f35503766839ba1bc86.png" alt="" title="" ></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>配置情景模式
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start">选择<code>socks5</code>协议，本机 127.0.0.1 地址 1086 端口 <br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/f9ba634573eb54c3d7401239f3f47b8c.png" alt="" title="" ></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>配置自动切换
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start">点击左侧导航栏 <code>auto switch</code>，选择 AutoProxy。<br /></span>
+    <span class="md_line">填写规则 url: <code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code><br /></span>
+    <span class="md_line">点击 <code>Download Profile Now</code>更新规则。<br /></span>
+    <span class="md_line">最后Apply Changes 保存更改。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/1e4c9f2c509aed6b28e0cf2f2678b42e.png" alt="" title="" ></span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>需要访问谷歌时，把模式切换到 <code>auto switch</code> 或者新建的 <code>shadowsocks</code>(自己刚才新建的名字) 情景模式。
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/6d761284729ee3742eb5005da3f889ef.png" alt="" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start"><strong>客户端配置</strong><br /></span>
+    <span class="md_line">打开安装好的 APP，点击 Server Preferences，设置代理。<br /></span>
+    <span class="md_line">Address 为服务器公网 IP 地址，后面为服务器配置文件中端口号，Encryption 为加密方法，密码为配置文件中密码。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/b8318b0920821ef206ddd4f90d83818b.png" alt="" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/d349f6fb139159744216a64c30b8d579.png" alt="" title="" ></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start">之后再点击 Preferences (偏好设置)，设置本地端口(1086)，与浏览器配置的本地端口一致。<br /></span>
+    <span class="md_line md_line_dom_embed md_line_with_image next_md_line next_img_before next_only_img_before next_md_line_end"><img class="md_compiled " src="https://www.markeditor.com/file/get/c2d2d5d27c65ba93f529c2bc04bd5ce3.png" alt="" title="" ><img class="md_compiled " src="https://www.markeditor.com/file/get/b36c60d75623dd494768c13a9ccbbffa.png" alt="" title="" ><br /></span>
+    <span class="md_line img_before only_img_before md_line_end">测试是否能访问谷歌。</span>
+</p>
+        </div>
+    </div>
+    <!--mathjax-->
+    <!--mermaid-->
+</body>
+</html>
