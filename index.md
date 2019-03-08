@@ -4,6 +4,8 @@ id: 52362
 # 目录
 
 ## [Blog Index](https://github.matianhe.cn)
+- [动手组装一台小型服务器-树莓派](2019-03-8-2.md)
+- [局域网内利用 DNS 服务器去除广告](2019-03-8.md)
 - [服务器搭建ss科学上网学习工具](2019-03-06.html)
 - [利用pandas、matplotlib和wordcloud进行数据分析](2019-01-05.html)
 - [用python对鹿晗微博进行数据分析](2019-01-05-2.html)
